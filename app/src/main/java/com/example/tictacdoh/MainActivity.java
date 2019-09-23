@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +59,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (player1Turn) {
-            ((Button) v).setText("X");
+            ((Button) v).setBackgroundResource(R.drawable.caesarlegion);
+            ((Button) v).setText(" ");
         } else {
-            ((Button) v).setText("O");
+            ((Button) v).setBackgroundResource(R.drawable.ncrflag);
+            ((Button) v).setText("  ");
         }
 
         roundCount++;
@@ -143,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
+                buttons[i][j].setBackgroundResource(R.color.gray);
             }
         }
 
